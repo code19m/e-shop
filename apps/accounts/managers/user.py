@@ -26,7 +26,6 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault("first_name", "Nuriddin")
         extra_fields.setdefault("last_name", "Obidjonov")
         extra_fields.setdefault("second_name", "Olimjon o'g'li")
-        extra_fields.setdefault("role", "stockman")
 
         if extra_fields.get("is_staff") is not True:
             raise ValueError("Superuser must have is_staff=True.")

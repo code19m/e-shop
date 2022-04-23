@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 from apps.accounts.managers.user import CustomUserManager
-from apps.utils.mixins import DateTimeMixinModel
+from apps.utils.mixins import ModelMixin
 from apps.utils.validators import phone_regex
 
 
-class User(DateTimeMixinModel, AbstractUser):
+class User(ModelMixin, AbstractUser):
 
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)

@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_spectacular',
 
-    'apps.accounts',
+    'apps.accounts.apps.AccountsConfig',
+    'apps.shop.apps.ShopConfig'
 ]
 
 MIDDLEWARE = [
@@ -46,7 +47,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'mvc.shop'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
