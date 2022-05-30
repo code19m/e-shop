@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'drf_spectacular',
 
     'apps.accounts.apps.AccountsConfig',
-    'apps.shop.apps.ShopConfig'
+    'apps.shop.apps.ShopConfig',
+    'apps.cart.apps.CartConfig'
 ]
 
 MIDDLEWARE = [
@@ -47,7 +48,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'mvc.shop'],
+        'DIRS': [BASE_DIR / 'mvc/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,8 +129,12 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CART_SESSION_ID = 'cart'
